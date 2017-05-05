@@ -4,6 +4,7 @@ d8_demo.static_content:
     _controller: '\Drupal\my_d8_demo\Controller\MyD8DemoController::static_content' 
   requirements: 
     _permission: 'access training content' 
+
 d8_demo.dynamic_content: 
   path: '/dynamic_content/{arg}'
   defaults: 
@@ -11,10 +12,25 @@ d8_demo.dynamic_content:
     arg: 5 
   requirements: 
     _permission: '\Drupal\my_d8_demo\Controller\MyD8DemoController::nodeCreatorAccess'
+
 d8_demo.entity_upcaster: 
   path: '/list/{node}'
   defaults: 
     _controller: '\Drupal\my_d8_demo\Controller\MyD8DemoController::entityUpcaster'
     node: 5
   requirements: 
-    _node_creator_check: 'TRUE' 
+    _custom_access: '\Drupal\my_d8_demo\Controller\MyD8DemoController::nodeCreatorAccess'
+    
+d8_demo.simple_form:
+  path: '/simple-form'
+  defaults: 
+    _form: '\Drupal\my_d8_demo\Form\SimpleForm'
+  requirements: 
+    _permission: 'access training content'
+    
+d8_demo.advanced_form:
+  path: '/advanced-form'
+  defaults: 
+    _form: '\Drupal\my_d8_demo\Form\AdvancedForm'
+  requirements: 
+    _permission: 'access training content'

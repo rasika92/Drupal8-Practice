@@ -13,8 +13,6 @@ class NodeCreatorCheck implements AccessInterface {
 		$this->account = $account;
 	}
 	public function access(NodeInterface $node) {
-		kint ( $node );
-		kint ( $this->account );
 		if ($node->getOwnerId () === $this->account->id ()) {
 			return AccessResult::allowed ();
 		} else {

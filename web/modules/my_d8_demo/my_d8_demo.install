@@ -1,0 +1,25 @@
+<?php
+
+function my_d8_demo_schema() {
+	$schema = array();
+	$schema['user_data'] = array(
+		'description' => 'Saves user details',
+		'fields' => array(
+			'fname' => array(
+				'description' => 'User first name',
+		        'type' => 'varchar',
+		        'length' => 40,
+		        'not null' => TRUE,
+		        'default' => '',
+			),
+			'lname' => array(
+				'description' => 'User last name',
+		        'type' => 'varchar',
+		        'length' => 40,
+		        'not null' => TRUE,
+		        'default' => '',
+			),
+		),
+	);
+	return $schema;
+}
