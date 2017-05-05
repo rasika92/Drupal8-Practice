@@ -1,0 +1,5 @@
+name: "Drupal 8 demo"
+package: "Custom"
+type: module
+core: 8.x
+description: My First d8 Module

@@ -1,0 +1,5 @@
+my_d8_demo.add_node:
+  route_name: node.add_page
+  title: 'Add Node'
+  appears_on:
+    - 'd8_demo.entity_upcaster'

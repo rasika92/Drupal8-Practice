@@ -1,0 +1,20 @@
+d8_demo.static_content: 
+  path: '/static_content'
+  defaults: 
+    _controller: '\Drupal\my_d8_demo\Controller\MyD8DemoController::static_content' 
+  requirements: 
+    _permission: 'access training content' 
+d8_demo.dynamic_content: 
+  path: '/dynamic_content/{arg}'
+  defaults: 
+    _controller: '\Drupal\my_d8_demo\Controller\MyD8DemoController::dynamicContent'
+    arg: 5 
+  requirements: 
+    _permission: '\Drupal\my_d8_demo\Controller\MyD8DemoController::nodeCreatorAccess'
+d8_demo.entity_upcaster: 
+  path: '/list/{node}'
+  defaults: 
+    _controller: '\Drupal\my_d8_demo\Controller\MyD8DemoController::entityUpcaster'
+    node: 5
+  requirements: 
+    _node_creator_check: 'TRUE' 

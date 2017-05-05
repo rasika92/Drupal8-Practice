@@ -1,0 +1,7 @@
+my_d8_demo.static:
+  title: 'My D8 module settings'
+  description: 'My D8 module settings description'
+  parent: 
+    system.admin_config_system
+  route_name: d8_demo.static_content
+  weight: 100

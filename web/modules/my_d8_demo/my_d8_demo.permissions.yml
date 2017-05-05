@@ -1,0 +1,4 @@
+access training content:
+  title: 'ACCESS TRAINING CONTENT'
+  description: 'THis is My D8 Demo permission to Bypass access control.'
+  restrict access: TRUE
