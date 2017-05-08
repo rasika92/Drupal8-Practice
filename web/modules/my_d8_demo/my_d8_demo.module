@@ -1,0 +1,11 @@
+<?php
+
+function my_d8_demo_theme($existing) {
+	return [
+		'weather_widget' => [
+			'variables' => [
+				'weather_data' => NULL,
+			],	
+	 	],	
+	];
+}

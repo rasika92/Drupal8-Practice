@@ -34,3 +34,26 @@ d8_demo.advanced_form:
     _form: '\Drupal\my_d8_demo\Form\AdvancedForm'
   requirements: 
     _permission: 'access training content'
+    
+my_d8_demo.misc_form:
+  path: '/my_d8_demo/form/misc'
+  defaults:
+    _form: '\Drupal\my_d8_demo\Form\MiscForm'
+    _title: 'MiscForm'
+  requirements:
+    _access: 'TRUE'
+  
+my_d8_demo.custom_config_form:
+  path: '/custom-config-form'
+  defaults:
+    _form: '\Drupal\my_d8_demo\Form\ConfigForm'
+    _title: 'ConfigForm'
+  requirements:
+    _access: 'TRUE'
+my_d8_demo.default_controller_fetchWeatherData:
+  path: '/d8-demo/weather-api'
+  defaults:
+    _controller: '\Drupal\my_d8_demo\Controller\DefaultController::fetchWeatherData'
+    _title: 'weatherApiResponse'
+  requirements:
+    _permission: 'access content'

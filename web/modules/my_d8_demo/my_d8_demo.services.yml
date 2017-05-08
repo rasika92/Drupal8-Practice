@@ -8,3 +8,7 @@ services:
   my_d8_demo.dbwrapper:
     class: Drupal\my_d8_demo\DbWrapper
     arguments: ['@database']
+    
+  my_d8_demo.weather_check:
+    class: Drupal\my_d8_demo\WeatherCheck
+    arguments: ['@config.factory', '@http_client']
