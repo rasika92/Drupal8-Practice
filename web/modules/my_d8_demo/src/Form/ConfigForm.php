@@ -4,9 +4,20 @@ namespace Drupal\my_d8_demo\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Drupal\my_d8_demo\Event\WeatherConfigEvent;
 
 class ConfigForm extends ConfigFormBase {
-
+	protected $eventDispatcher;
+	public function __construct(ConfigFactoryInterface $config_factory, EventDispatcherInterface $eventDispatcher) {
+		parent::__construct ( $config_factory );
+		$this->eventDispatcher = $eventDispatcher;
+	}
+	public static function create(ContainerInterface $container) {
+		return new static ( $container->get ( 'config.factory' ), $container->get ( 'event_dispatcher' ) );
+	}
 	/**
 	 * Returns a unique string identifying the form.
 	 *
@@ -56,6 +67,8 @@ class ConfigForm extends ConfigFormBase {
 	 */
 	public function submitForm(array &$form, FormStateInterface $form_state) {
 		$this->config ( 'my_d8_demo.weather_config' )->set ( 'appid', $form_state->getValue ( 'api_key' ) )->save ();
+		$event = new WeatherConfigEvent ( $form_state->getValue ( 'api_key' ) );
+		$this->eventDispatcher->dispatch ( WeatherConfigEvent::WEATHER_CONFIG_UPDATE, $event );
 		parent::submitForm ( $form, $form_state );
 	}
 	protected function getEditableConfigNames() {

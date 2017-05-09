@@ -12,3 +12,13 @@ services:
   my_d8_demo.weather_check:
     class: Drupal\my_d8_demo\WeatherCheck
     arguments: ['@config.factory', '@http_client']
+    
+  my_d8_demo.event_subscriber_access_header_injector:
+    class: Drupal\my_d8_demo\EventSubscriber\AccessHeaderInjector
+    tags:
+      - {"name": "event_subscriber"}
+      
+  my_d8_demo.weather_config_logger:
+    class: Drupal\my_d8_demo\EventSubscriber\WeatherConfigLogger
+    tags:
+      - {"name": "event_subscriber"}

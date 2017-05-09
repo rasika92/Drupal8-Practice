@@ -23,6 +23,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
 		$this->weatherCheck = $weatherCheck;
 	}
 	public function build() {
+		// Build function will render block content.
 		$weather_data = $this->weatherCheck->pullData ( $this->configuration ['city_name'] );
 		return array (
 				'#theme' => 'weather_widget',
@@ -30,7 +31,8 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
 				'#attached' => [
 						'library' => [
 								'my_d8_demo/weather-widget'
-						]
+						] // modulename/libraryname.
+
 				]
 		);
 	}

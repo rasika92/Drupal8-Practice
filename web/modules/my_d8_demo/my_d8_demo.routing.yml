@@ -50,6 +50,7 @@ my_d8_demo.custom_config_form:
     _title: 'ConfigForm'
   requirements:
     _access: 'TRUE'
+    
 my_d8_demo.default_controller_fetchWeatherData:
   path: '/d8-demo/weather-api'
   defaults:
