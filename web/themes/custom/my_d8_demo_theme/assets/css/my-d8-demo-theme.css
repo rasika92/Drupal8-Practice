@@ -1,0 +1,26 @@
+body {
+	background-color: #cccccc;
+}
+
+.page-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.main-content-wrapper .left-sidebar,
+.main-content-wrapper .right-sidebar  {
+	width: 20%;
+}
+
+.main-content-wrapper .content {
+	width: 80%;
+}
+
+.sub-slogan {
+	background-color: #b19595;
+}

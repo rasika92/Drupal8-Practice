@@ -1,0 +1,24 @@
+name: My D8 Demo Theme
+type: theme
+description: My Awesome theme
+package: Other
+core: 8.x
+libraries:
+  - my_d8_demo_theme/global-styling
+
+base theme: bartik
+
+regions:
+  header: Header
+  left_sidebar: Left Sidebar
+  content: Content
+  right_sidebar: Right Sidebar
+  footer: Footer
+
+libraries-override:
+  my_d8_demo/weather-widget: my_d8_demo_theme/weather-widget
+ 
+#libraries-override:
+#  my_d8_demo/weather-widget:
+#    js:
+#      assets/js/weather-widget.js: my_d8_demo_theme/weather-widget/assets/js/weather-widget.js

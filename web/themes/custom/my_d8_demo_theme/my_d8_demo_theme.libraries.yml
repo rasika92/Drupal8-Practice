@@ -1,0 +1,16 @@
+global-styling:
+  css:
+    theme:
+      assets/css/my-d8-demo-theme.css: {}
+  js:
+    assets/js/my-d8-demo-theme.js: {}
+    
+node-styling:
+  css:
+    theme:
+      assets/css/node.css: {}
+      
+weather-widget:
+  css:
+    theme:
+      assets/css/weather-widget.css: {}
